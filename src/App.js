@@ -65,7 +65,7 @@ const App = () => {
               Resume (PDF)
             </a>
             <a
-              href="https://www.linkedin.com/in/jonathan-narv%C3%A1ez-mart%C3%ADnez-338102233/"
+              href="https://github.com/Naramatsu/challenge-jonathan-narvaez"
               target="_blank"
               rel="noreferrer"
             >
