@@ -1,0 +1,159 @@
+header {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  color: #fff;
+
+  .modal {
+    opacity: 1;
+    top: 70px;
+    right: 1.5em;
+    position: fixed;
+    transition: 0.5s ease all;
+    color: #000;
+    z-index: 1000;
+
+    .kromac-panel {
+      .content {
+        a {
+          position: relative;
+          display: block;
+          color: #000;
+        }
+      }
+    }
+
+    &.hidden {
+      transition: 0.5s ease all;
+      opacity: 0;
+      top: -100%;
+    }
+  }
+
+  a {
+    position: fixed;
+    text-decoration: none;
+    z-index: 1000;
+
+    h1 {
+      position: relative;
+      left: 1.5em;
+    }
+  }
+
+  h4 {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+    right: 1.5em;
+    position: fixed;
+    color: #fff;
+    background: linear-gradient(
+      90deg,
+      rgba(34, 61, 128, 1) 20%,
+      rgba(239, 63, 50, 1) 100%
+    );
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+  }
+}
+
+ol {
+  padding-left: 2em;
+}
+
+.task {
+  z-index: -3;
+  padding: 0 1em;
+}
+
+.container {
+  width: 90%;
+  margin: 2em 5%;
+}
+
+.App {
+  position: relative;
+  overflow: auto;
+  height: 100vh;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    clip-path: polygon(0 0%, 100% 0, 50% 100%, 0% 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(34, 61, 128, 1) 20%,
+      rgba(239, 63, 50, 1) 100%
+    );
+    z-index: -1;
+  }
+}
+.dark {
+  background: #353839;
+  color: #fff;
+}
+
+@media (max-width: 1120px) {
+  .App {
+    &::before {
+      position: absolute;
+    }
+
+    header {
+      a {
+        position: relative;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .task {
+    margin-top: 11em;
+  }
+}
+
+@media (max-width: 530px) {
+  .container {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .task {
+    margin-top: 3em;
+  }
+}
+
+@media (max-width: 420px) {
+  header {
+    h4 {
+      bottom: 20px;
+    }
+
+    .modal {
+      top: auto;
+      bottom: 80px;
+      transition: 0.5s ease all;
+
+      &.hidden {
+        transition: 0.5s ease all;
+        top: auto;
+        bottom: -100%;
+      }
+    }
+  }
+}

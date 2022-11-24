@@ -1,0 +1,65 @@
+@mixin box-shadows {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25) !important;
+}
+
+.main {
+  margin-top: 2em !important;
+
+  .kromac-panel {
+    @include box-shadows;
+    overflow: auto;
+    width: 500px;
+
+    .grouper {
+      display: flex;
+      gap: 10px;
+    }
+
+    &.fixed {
+      position: fixed;
+    }
+
+    .content {
+      .button {
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        font-size: 1em;
+
+        &.float {
+          @include box-shadows;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: 0.5em;
+        }
+      }
+
+      .kromac-btn {
+        margin: auto;
+        margin-top: 2em;
+        border-radius: 0.25em;
+      }
+
+      .search__intermediate {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .main .kromac-panel.fixed {
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media (max-width: 530px) {
+  .main .kromac-panel .grouper {
+    display: block;
+  }
+}
