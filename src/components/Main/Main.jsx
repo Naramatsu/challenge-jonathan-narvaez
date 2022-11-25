@@ -181,7 +181,7 @@ const Main = () => {
                   inputLabel="City of origin"
                   value={trip?.originCity?.name || txtOriginCity}
                   onChangeInput={(e) =>
-                    handlerChangeInput(e, 'destinationCity', setTxtOriginCity)
+                    handlerChangeInput(e, 'originCity', setTxtOriginCity)
                   }
                   data={listCities}
                   isLoading={isLoading}
